@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> 排版練習 </title>
+    <link rel="stylesheet" href="reset.css">
+    <style type="text/css">
+        .header{
+            display: flex;
+            padding: 6px 10px;
+            background-color: #000;
+        }
+        .header .logo{
+            display: inline-block;
+            padding: 5px 0px;
+        }
+        .header nav{
+            text-align: right;
+            width: 100%;
+            font-size: 0;
+        }
+        .header nav a{
+            font-size: 16px;
+            color: #fff;
+            text-decoration: none;
+            display: inline-block;
+            line-height: 52px;
+            padding: 0 10px;
+        }
+        .header nav a:hover{
+            background-color: #00aeff;
+        }
+        
+        
+        .banner img{
+           width: 100%;
+        }
+        .path{
+            display: flex;
+        }
+        .path li{
+            padding: 8px 10px;
+            position: relative; /*父層定位  相對定位*/         
+        }
+        .path li a{
+            color: rgb(145, 82, 0);
+            text-decoration: none;
+            font-size: 15px;
+        }
+        .path li + li::before{  /*偽元素*/
+            content: '/';  /*將path - li - 中間都加上 /符號*/
+            color: #aaa;
+            position: absolute; /* 絕對定位 (需要父層)*/
+            left: 0;
+        }
+        .item h3{
+            font-size: 30px;
+            padding: 0 0 20px;
+        }
+        .wrap{
+            width: 960px;
+            margin:auto;
+        }
+        .about{
+            padding: 30px 0px 50px;
+        }
+        .about .wrap{
+            display: flex;
+            
+        }
+        .adout .wrap .item{
+            width: 300px;
+            margin: 0 10px;
+            text-align: center;
+        }
+        .about img{
+            border-radius: 50%;
+        }
+        .about > h2{
+            width: 960px;
+            font-size:42px;
+            margin: auto;
+            text-align: center;
+            padding: 20px 0px;
+        }
+        .about > p{
+            width: 660px;
+            margin: auto;
+            padding: 0px 0px 40px;
+            text-align: center;
+        }
+        .products{
+            background-color: #666;
+        }
+        .products .wrap{
+            display: flex;
+        }
+        .products .item{
+            width: 50%;
+            font-size: 0;
+        }
+        .products .item img{
+            width: 100%
+            
+        }
+        .products .pic{
+            
+        }
+        .products .text{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding:0 20px;
+            text-align: center;
+        }
+        .service{
+            padding: 40px 0;
+        }
+        .service > h2{
+            width: 960px;
+            margin: auto;
+            text-align: center;
+            font-size: 42px;
+            padding: 20px 0;
+        }
+        .service > p{
+            width: 960px;
+            margin: auto;
+            text-align: center;
+            padding-bottom: 40px;
+        }
+
+        .service .wrap{
+            display: flex;
+        }
+        .service .item{
+            margin: 0 10px;
+            width: 300px;
+            text-align: center;
+        }
+        .service .item h3{
+
+        }
+        .service .item p{
+
+        }
+        .service .item img{
+            width: 100%;
+        }
+
+
+
+        .footer{
+            text-align: center;
+            background-color: #000;
+            color:#666;
+            padding: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        
+        <a href="#" class="logo"><img src="https://picsum.photos/80/40?random=1" alt="網站"></a>
+        <nav>
+            <a href="#">相關資料</a>
+            <a href="#">聯絡資訊</a>
+            <a href="#">我的作品</a>
+            <a href="#">輕鬆小品</a>
+            <a href="#">公司位置</a>
+        </nav>
+    </div>
+        <div class="banner"></div>
+            <img src="https://picsum.photos/1600/300?random=2">
+        </div>
+
+        <ul class="path">
+            <li><a href="#">首頁</a></li>
+            <li><a href="#">最新消息</a></li>
+            <li><a href="#">客服時間</a></li>
+        </ul>
+
+        <div class="about">
+            <h2>關於這個網站</h2>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rerum maxime laborum consectetur, consequuntur doloribus quisquam.</p>
+            <div class="wrap">
+                <div class="item">
+                    <img src="https://picsum.photos/50/50?random=1">
+                    <h2>標題</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto, dolor.</p>
+                </div>
+                <div class="item">
+                    <img src="https://picsum.photos/50/50?random=2">
+                    <h2>標題</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto, dolor.</p>
+                </div>
+                <div class="item">
+                    <img src="https://picsum.photos/50/50?random=3">
+                    <h2>標題</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto, dolor.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="products">
+            <div class="wrap">
+                <div class="item pic">
+                    <img src="https://picsum.photos/300/200?random=5">
+                </div>
+                <div class="item text">
+                    <h3> THE </h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti assumenda perspiciatis nemo. Sit pariatur dolorum harum ut autem animi adipisci dignissimos, repellendus consectetur molestias odit facere veniam voluptatem quas dolorem.</p>
+                </div>
+            </div>
+        </div>    
+
+
+        <div class="service">
+            <h2>產品資訊</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, eius!</p>
+            <div class="wrap">
+                <div class="item">
+                    <img src="https://picsum.photos/300/200?random=6">
+                    <h3>title</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, sequi?</p>
+                </div>
+                <div class="item">
+                    <img src="https://picsum.photos/300/200?random=7">
+                    <h3>title</h3>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illo molestiae ipsa pariatur dolorem officiis, et obcaecati quidem doloremque porro consequatur?</p>
+                </div>
+                <div class="item">
+                    <img src="https://picsum.photos/300/200?random=8">
+                    <h3>title</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis perspiciatis et quo culpa dolorem nisi, explicabo consequuntur provident dolores accusantium voluptate repellat dolorum laborum officia?</p>
+                </div>
+                <div class="item">
+                    <img src="https://picsum.photos/300/200?random=9">
+                    <h3>title</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, sequi?</p>
+                </div>
+            </div>
+
+        </div>
+
+
+
+
+
+    <div class="footer">
+        &copy; copyright 2021 by csscoke
+    </div>
+</body>
+</html>
