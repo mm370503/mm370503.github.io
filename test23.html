@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> 交錯漂浮版 </title>
+    <style type="text/css">
+        @import url("https://fonts.googleapis.com/css2?family=Kiwi+Maru&display=swap");
+    *{
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+    body{        /* 背景色 : 漸層方式 115度 顏色1 顏色2  固定定位*/
+        background: linear-gradient(111deg,#dff9fb,#95afc0) 
+        fixed center center/ 100% 100%;  
+        /* 背景色 center 表示正中間   100% 100% 為背景尺寸 寬/高*/
+        padding: 100px 0;   /* 使用fixed定位不會讓視窗捲動時顏色跟著跑*/
+        display: flex;
+        flex-direction: column;
+        
+    }
+    .footer{
+        font-size: 16px;
+        background-color: #000;
+        color: #999;
+        text-align: center;
+        padding: 15px 0px;
+        margin-bottom: -100px;
+    }
+    .wrap{
+        width: 1200px;
+        margin: auto;
+    }
+    .item{
+        display: flex;  /* 顯示方式 : 橫排 */
+        align-items: center;   /*對齊方式 : 置中 */
+        margin-bottom: 50px;
+        font-family: 'Kiwi Maru', serif;
+    }
+    .item h2{ font-weight: 900; opacity: 1;}
+    .item p{ font-weight: 300; opacity: 1;}
+    .item img{
+        width: 100%;  /*圖片寬設定100%*/
+        vertical-align: middle;   /* 圖片置中 (不設定的話圖片下方會有空白) */
+    }
+    .item .pic{
+        width: 55%;
+        flex-shrink: 0; /* 彈性收縮 為 0*/
+        opacity: .5;
+    }
+    .item .text{
+        width: 55%;
+        flex-shrink: 0; /* 彈性收縮 為 0*/
+        padding: 30px 30px; /* 設定內間距  */
+        box-sizing: border-box; /*自動計算扣除 border 或 padding 所剩餘的空間*/
+        position: relative; /* 相對定位 */
+        z-index: 1;
+    }
+    .item > :first-child{ 
+        margin-right: -10%;
+    }
+    .item:nth-child(1) .text{
+        background-color: rgb(240, 174, 193, .6);  /* .7為不夠明度 */
+    }
+    .item:nth-child(2) .text{
+        background-color: rgb(190, 181, 52, .6);
+    }
+    .item:nth-child(3) .text{
+        background-color: rgb(57, 125, 252, .6);
+    }
+    .item:nth-child(4) .text{
+        background-color: rgb(51, 228, 104, .6);
+    }
+
+    .text:hover p {
+        transform: translateX(-3%);
+        transition: .3s .3s;
+    }
+    .text:hover h2 {
+        transform: translateX(-1%);
+        transition: .3s .3s;
+    }
+    </style>
+</head>
+<body>
+
+    <div class="wrap">
+        <!--第一段-->
+        <div class="item">
+            <div class="pic">
+                <img src="https://picsum.photos/600/350?random=11">
+            </div>
+            <div class="text">
+                <h2>Title</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat corrupti dignissimos explicabo aut laborum aperiam nam numquam cum cumque, laboriosam alias fuga eos blanditiis excepturi commodi possimus doloremque maiores veniam voluptates! Quaerat, quidem. Minima, repudiandae.</p>
+            </div>
+        </div>
+        <!--第二段-->
+        <div class="item">
+            <div class="text">
+                <h2>Title</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat corrupti dignissimos explicabo aut laborum aperiam nam numquam cum cumque, laboriosam alias fuga eos blanditiis excepturi commodi possimus doloremque maiores veniam voluptates! Quaerat, quidem. Minima, repudiandae.</p>
+            </div>
+            <div class="pic">
+                <img src="https://picsum.photos/600/350?random=12">
+            </div>
+        </div>
+        <!--第三段-->
+        <div class="item">
+            <div class="pic">
+                <img src="https://picsum.photos/600/350?random=13">
+            </div>
+            <div class="text">
+                <h2>Title</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat corrupti dignissimos explicabo aut laborum aperiam nam numquam cum cumque, laboriosam alias fuga eos blanditiis excepturi commodi possimus doloremque maiores veniam voluptates! Quaerat, quidem. Minima, repudiandae.</p>
+            </div>
+        </div>
+        <!--第四段-->
+        <div class="item">
+            <div class="text">
+                <h2>Title</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat corrupti dignissimos explicabo aut laborum aperiam nam numquam cum cumque, laboriosam alias fuga eos blanditiis excepturi commodi possimus doloremque maiores veniam voluptates! Quaerat, quidem. Minima, repudiandae.</p>
+            </div>
+            <div class="pic">
+                <img src="https://picsum.photos/600/350?random=14">
+            </div>
+        </div>
+    <div class="footer">
+        &copy; copyright 2021 by csscoke
+    </div>
+
+        
+    </div>
+
+    
+</body>
+</html>
