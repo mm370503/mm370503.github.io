@@ -1,0 +1,332 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
+    <title> Bootstrap入門-1 </title>
+    <style type="text/css">
+    
+        .jumbotron{
+            display:flex;
+            background: url("https://picsum.photos/1920/400?random=1") no-repeat; 
+            margin-bottom: 0px;
+        }
+        .breadcrumb{
+          background-color: #dfe4ea;
+        }
+        .path{
+          background-color: #ccc;
+        }
+        .path .breadcrumb{
+          background-color: transparent;  /* transparent 透明色 */
+        }  
+        .main-footer{
+          padding: 10px;
+          background-color:#000;
+          color:white;
+        }
+
+    </style>
+  </head>
+  <body>
+    
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Leo王</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">首頁</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#login-block" data-bs-toggle="modal">登入</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  選單
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+              </li>
+            </ul>
+            <form class="d-flex">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+          </div>
+        </div>
+    </nav>
+
+    <!--  
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#login-block">
+      Launch demo modal
+    </button>  
+
+    <a href="#login-block" data-bs-toggle="modal"></a>
+    ------>
+
+    <!--
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+          <h1 class="display-4">Fluid jumbotron</h1>
+          <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+          
+        </div>
+    </div>
+    -->
+
+    <div id="carouselExampleDark" class="carousel carousel-dark slide"            data-bs-ride="carousel">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="3" class="active" aria-current="true" aria-label="Slide 4"></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active" data-bs-interval="10000">
+          <img  class="d-block w-100" src="https://picsum.photos/1200/300?random=1">
+
+
+          <div class="carousel-caption d-none d-md-block">
+            <h5>First slide label</h5>
+            <p>Some representative placeholder content for the first slide.</p>
+          </div>
+        </div>
+        <div class="carousel-item" data-bs-interval="2000">
+          <img  class="d-block w-100" src="https://picsum.photos/1200/300?random=2">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Second slide label</h5>
+            <p>Some representative placeholder content for the second slide.</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img  class="d-block w-100" src="https://picsum.photos/1200/300?random=3">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Third slide label</h5>
+            <p>Some representative placeholder content for the third slide.</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img  class="d-block w-100" src="https://picsum.photos/1200/300?random=4">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Third slide label</h5>
+            <p>Some representative placeholder content for the third slide.</p>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+
+
+  <div class="path">
+    <div class="container">
+      <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="https://google.com.tw">Google</a></li>
+            <li class="breadcrumb-item"><a href="https://tw.yahoo.com/?p=us&guccounter=1">奇摩</a></li>
+            <li class="breadcrumb-item"><a href="#">小鍋</a></li>
+            <li class="breadcrumb-item"><a href="#">臭寶</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Data</li>
+          </ol>
+      </nav>
+    </div>
+  </div>  
+
+
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-md-3">
+        <div class="list-group">
+          <a href="#" class="list-group-item list-group-item-action active" aria-current="true">
+            產品目錄</a>
+          <a href="#" class="list-group-item list-group-item-action">目錄 (一) </a>
+          <a href="#" class="list-group-item list-group-item-action">目錄 (二)</a>
+          <a href="#" class="list-group-item list-group-item-action">目錄 (三)</a>
+          <a href="#" class="list-group-item list-group-item-action disabled" tabindex="-1" aria-disabled="true">目錄 (四)</a>
+        </div>
+      </div>
+      <div class="col-12 col-md-9">
+        <h1>title</h1>
+        <p>司機證明積極，針對群眾家電身材分析吃了全面斗內先生網咖人員快速儘快中港路，中文成人訪問給你心理寂寞是在客服報導舉報不願。
+        </p>
+
+        <div class="row">
+          <div class="col-12 col-md-3">
+            <div class="item">
+              <img src="https://picsum.photos/300/200?random=1" class="img-fluid">
+              <h3>title</h3>
+              <p>貸款新聞，放心電腦真實性標誌群眾，事件。</p>
+            </div>
+          </div>
+          <div class="col-12 col-md-3">
+            <div class="item">
+              <img src="https://picsum.photos/300/200?random=2" class="img-fluid">
+              <h3>title</h3>
+              <p>貸款新聞，放心電腦真實性標誌群眾，事件。</p>
+            </div>
+          </div>
+          <div class="col-12 col-md-3">
+            <div class="item">
+              <img src="https://picsum.photos/300/200?random=3" class="img-fluid">
+              <h3>title</h3>
+              <p>貸款新聞，放心電腦真實性標誌群眾，事件。</p>
+            </div>
+          </div>
+          <div class="col-12 col-md-3">
+            <div class="item">
+              <img src="https://picsum.photos/300/200?random=4" class="img-fluid">
+              <h3>title</h3>
+              <p>貸款新聞，放心電腦真實性標誌群眾，事件。</p>
+            </div>
+          </div>
+        
+          <div class="col-12 col-md-3">
+            <div class="item">
+              <img src="https://picsum.photos/300/200?random=21" class="img-fluid">
+              <h3>title</h3>
+              <p>貸款新聞，放心電腦真實性標誌群眾，事件。</p>
+            </div>
+          </div>
+          <div class="col-12 col-md-3">
+            <div class="item">
+              <img src="https://picsum.photos/300/200?random=22" class="img-fluid">
+              <h3>title</h3>
+              <p>貸款新聞，放心電腦真實性標誌群眾，事件。</p>
+            </div>
+          </div>
+          <div class="col-12 col-md-3">
+            <div class="item">
+              <img src="https://picsum.photos/300/200?random=23" class="img-fluid">
+              <h3>title</h3>
+              <p>貸款新聞，放心電腦真實性標誌群眾，事件。</p>
+            </div>
+          </div>
+          <div class="col-12 col-md-3">
+            <div class="item">
+              <img src="https://picsum.photos/300/200?random=24" class="img-fluid">
+              <h3>title</h3>
+              <p>貸款新聞，放心電腦真實性標誌群眾，事件。</p>
+            </div>
+          </div>  
+        
+        </div>
+      
+        <div class="page">
+          <nav aria-label="Page navigation example">
+            <ul class="pagination justify-content-center">
+              <li class="page-item">
+                <a class="page-link" href="#" aria-label="Previous">
+                  <span aria-hidden="true">&laquo;</span>
+                </a>
+              </li>
+              <li class="page-item"><a class="page-link" href="#">1</a></li>
+              <li class="page-item"><a class="page-link" href="#">2</a></li>
+              <li class="page-item"><a class="page-link" href="#">3</a></li>
+              <li class="page-item"><a class="page-link" href="#">4</a></li>
+              <li class="page-item">
+                <a class="page-link" href="#" aria-label="Next">
+                  <span aria-hidden="true">&raquo;</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <div class="container-fluid main-footer text-center">
+    &copy;right by 2021
+  </div>
+
+
+
+  <div class="modal" id="login-block" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">登入</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>請登入您的帳號</p>
+          <form>
+            <div class="form-group">
+                <label for="exampleInputEmail1">帳號Email address</label>
+                <input type="email" class="form-control" id="exampleInputEmail1"
+                    aria-describedby="emailHelp" placeholder="Enter email">
+                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
+                    else.</small>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">密碼Password</label>
+                <input type="password" class="form-control" id="exampleInputPassword1"
+                    placeholder="Password">
+            </div>
+            <div class="form-group form-check">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <label class="form-check-label" for="exampleCheck1">記住我 Check me out</label>
+            </div>
+
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-primary">登入</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
+            </div>
+
+
+
+
+
+
+
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+ 
+    
+    <!-- Optional JavaScript; choose one of the two! -->
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js" integrity="sha384-KsvD1yqQ1/1+IA7gi3P0tyJcT3vR+NdBTt13hSJ2lnve8agRGXTTyNaBYmCR/Nwi" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js" integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>
