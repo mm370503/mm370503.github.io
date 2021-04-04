@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> 人員介紹03 </title>
+    <link href="https://fonts.googleapis.com/css2?family=Kiwi+Maru&display=swap" rel="stylesheet">
+
+    <style type="text/css">
+    *{
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        font-family: 'Kiwi Maru', serif;
+        
+    }
+    html,body{
+        height: 100%;
+        
+    }
+    body{
+        display: flex;
+        align-items: center;
+        background-color: rgb(53, 59, 72,);
+        
+    }
+    .wrap{
+        width: 1200px;
+        display: flex;
+        margin: auto;
+        
+    }
+    .item{  /*Wrap設定1200px所以item理面框度設370+15margin  */
+       width: 368px;   /*   370 = 400-兩邊margin15X2 =30   */ 
+       margin: 15px;   /*  370 - 2px 邊線的寬*/
+       text-align: center;   /*文字置中*/
+       background-color: #fff;
+       border: 1px solid #666;
+       transform: translateY(0px);
+       transition: .6s;
+       display: flex;    /*----------------文軒-------------------*/
+       flex-direction: column;   /*----------文軒---------*/
+    
+    }
+    .item img{
+        width: 100%;
+        vertical-align: middle; /*圖片垂直對齊該行文字的置中位置*/
+        
+    }
+    .item h2{
+        border-bottom: 1px solid #888;  /*標題下方 底線 1px*/
+        padding-bottom: .3em; /*標題和底線的內間距離*/
+        margin-bottom: .5em; /*底線與下方元素的距離*/
+        font-weight: 600; /*字體厚度*/
+        
+    }
+    .item p{
+        line-height: 1.5; /*行高 1.5倍*/
+        font-weight: 300; /* 字體厚度 */
+        
+    }
+    .item .text{
+        padding: 15px; /* 文字和邊框的距離 (P=內距)*/
+        position: relative;
+        flex: auto;   /*----------------文軒-------------------*/
+    }
+    .item .text:before{
+        content: '';  /*使用偽類 : 必須用content來配合不然沒效果*/
+        position: absolute;
+        width: 0;
+        height: 0;
+        left: 0;
+        top: 0;
+        border-top: 80px solid transparent; /*上邊線 50px*/
+        border-left: 184px solid #fff; /*左邊線 184px= item寬/2   */
+        border-right: 184px solid #fff; /*右邊線*/
+        transform: translateY(-100%); /*移動 Y 100%*/
+        
+    }                         /* transparent 透明的 */
+    .item:hover{
+        transform: translateY(-10%); 
+        
+        
+    }
+    .item:hover .text{
+        background-image: linear-gradient(0deg,#ff6b6b, #eccc68);
+        
+    }
+    .item:hover .text::before{
+        border-left: 184px solid #eccc68; 
+        border-right: 184px solid #eccc68; 
+        
+    }
+    .item:hover h2{
+        color:#f1f2f6;
+        
+    }
+    .item:hover p{
+        color:#f1f2f6;
+        border-bottom-color: #f1f2f6;
+        
+    }
+    .item:hover p{
+        color: #f1f2f6 
+    }
+    
+</style>
+</head>
+<body>
+
+
+<div class="wrap">
+    <div class="item">
+        <img src="https://picsum.photos/300/300?random=11">
+        <div class="text">
+            <h2>經典語錄</h2>
+            <p>有些事知道了就好，些事知道了就好，有些事知道了就好，不必多說。有些人認識了就好，不必深交必深交必深交必深交。</p>
+        </div>
+    </div>
+    <div class="item">
+        <img src="https://picsum.photos/300/300?random=12">
+        <div class="text">
+            <h2>經典語錄</h2>
+            <p>這世上，沒有誰活得比誰容易，只是有人在呼天搶地，有人在默默努力。</p>
+        </div>
+    </div>
+    <div class="item">
+        <img src="https://picsum.photos/300/300?random=13">
+        <div class="text">
+            <h2>經典語錄</h2>
+            <p>如果說總有讓我們悲傷的一些歌，如果說總有讓我們悲傷的一些歌，如果說總有讓我們悲傷的一些歌，如果說總有讓我們悲傷的一些歌，如果說總有讓我們悲傷的一些歌，但讓我們哭泣的並不是歌本身，而是藏在背後的那些回憶。</p>
+        </div>
+    </div>
+</div>
+</body>
+</html>
